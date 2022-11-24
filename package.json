@@ -1,27 +1,48 @@
 {
   "name": "@rauwers/comp-lib",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Prototyping a react w/ typescript package",
+  
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   
   "scripts": {
-    "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run prettier && npm run lint",
+    
+    "prepare": "npm run build",
   
     "build": "yarn build:esm && yarn build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
+    
+    "test": "jest --config jestconfig.json",
 
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
-    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
-    "test": "jest --config jestconfig.json"
+    "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\""
   },
-  "keywords": [],
-  "author": "RauwersJiro",
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JiroRauwers/Comp-lib.git"
+  },
+  
+  "keywords": [
+    "react", "typescript"
+  ],
+  "author": "Jairo B B Rauwers (JiroRauwers)",
   "license": "ISC",
+  
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  
   "devDependencies": {
     "@testing-library/react": "^13.4.0",
     "@types/jest": "^29.2.3",
