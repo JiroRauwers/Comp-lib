@@ -1,0 +1,33 @@
+name: Build
+on: 
+  # Only run when a new release is made
+  release:
+    types: [published]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        # Check-out the git repository...
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19.X
+          registry-url: https://registry.npmjs.org/
+        
+      - name: Install dependencies
+        run: yarn && yarn install
+        
+      - name: Build
+        run: yarn build
+        
+      - name: pulbish
+        run: yarn publish --access public
+        
+        env:
+          # npm account token
+          NODE_AUTH)TOKEN: ${{ secrets.NOM_TOKEN }}
+          
+        
