@@ -27,7 +27,7 @@ jobs:
         run: yarn build
         
       - name: pulbish
-        run: yarn publish --new-version ${{GITHUB_REF##*/}}
+        run: yarn publish --new-version "${GITHUB_REF##*/}"
         
         env:
           # npm account token
