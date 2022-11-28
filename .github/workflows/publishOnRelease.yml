@@ -28,6 +28,6 @@ jobs:
         
         env:
           # npm account token
-          NODE_AUTH)TOKEN: ${{ secrets.NOM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NOM_TOKEN }}
           
         
