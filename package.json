@@ -1,6 +1,6 @@
 {
   "name": "@rauwers/comp-lib",
-  "version": "0.1.3",
+  "version": "0.1.8",
   "description": "Prototyping a react w/ typescript package",
   "private": false,
   "files": [
@@ -18,7 +18,7 @@
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "test": "jest --config jestconfig.json",
-    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "lint": "eslint \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\""
   },
   "repository": {
