@@ -1,5 +1,6 @@
 name: Publish on release
 on: 
+  workflow_dispatch: 
   # Only run when a new release is made
   release:
     types: [published]
